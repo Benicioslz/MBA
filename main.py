@@ -9,9 +9,9 @@ def main():
     verificar_diretorio('dataset')
 
     # Download do dataset
-    link_txt = "https://drive.google.com/file/d/1XqF3GOrqvHpLtNUSDXZivFn2KtSPdihL/view?usp=sharing"
-    # link_txt = "https://drive.google.com/file/d/17KOe8bJvHDceTpGZ9ru1YvjlROIMWhZ3/view?usp=drive_link" # fiquei na dúvida se era para pegar este arquivo também como input
-    file_txt = 'dataset/entrada_tst.txt'
+    # link_txt = "https://drive.google.com/file/d/1YjPaHv8aAVsXNzhHxum5gyUDFfY5iw1_/view?usp=drive_link"
+    link_txt = "https://drive.google.com/file/d/17KOe8bJvHDceTpGZ9ru1YvjlROIMWhZ3/view?usp=drive_link"
+    file_txt = 'dataset/entradagrande.txt'
     download_dataset(link_txt,file_txt)
 
     # Preencher a matriz de contratos
