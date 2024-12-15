@@ -9,7 +9,7 @@ def verificar_diretorio(nome_diretorio:str):
         os.mkdir(nome_diretorio)
     return None
 
-def download_dataset(link,filename):
+def download_dataset(link: str,filename: str):
     """
     Baixar o arquivo do Google Drive na pasta especificada
     """
@@ -22,7 +22,6 @@ def preencher_matriz_contratos(nome_arquivo: str):
     """
     Gera e preenche a matriz tridimensional com os valores dos contratos
     """
-    matriz = []
     with open(nome_arquivo, 'r') as arquivo:
 
         # Lê as dimensões da matriz
@@ -46,7 +45,7 @@ def preencher_matriz_contratos(nome_arquivo: str):
             matriz[int(fornecedor) - 1][int(inicio)][int(fim)] = valor 
     return m, n, t, matriz
 
-def imprimir_matriz(matriz, k=None):
+def imprimir_matriz(matriz: any, k=None):
     """
     Apresenta a matriz gerada em tela
     """
@@ -58,7 +57,7 @@ def imprimir_matriz(matriz, k=None):
         print(matriz[k])
     return None
 
-def exportar_csv(nome_arquivo, matriz):
+def exportar_csv(nome_arquivo: str, matriz: any):
     """
     Exporta a matriz em um arquivo CSV
     """
@@ -66,9 +65,10 @@ def exportar_csv(nome_arquivo, matriz):
         # Definindo contador inicial
         contador: int = 1
         # Adicionando a matriz no arquivo
-        for bloco in matriz[1:]:
+        for bloco in matriz:
             csv.writer(arq_csv).writerow([f'Valores do fornecedor: {contador}'])
             csv.writer(arq_csv, delimiter=',').writerows(bloco)
+            csv.writer(arq_csv).writerow([f' '])
             contador+=1
     
     print(f"O arquivo {nome_arquivo} foi criado com sucesso na pasta!")
